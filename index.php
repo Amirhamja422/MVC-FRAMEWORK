@@ -4,7 +4,7 @@
  include 'system/libs/main.php';
  include 'system/libs/mainctrltwo.php';
  
- $main = new main();
+ // $main = new main();
 
  $url = $_GET['url'];
 
@@ -20,14 +20,16 @@
  // print_r($url);
 
  // echo "</pre>"
-
+$dynamic_class = $url[0];
+$dynamic_method = $url[1];
+$dynamic_param = $url[2];
 
  include 'app/controllers/'.$url[0].'.php';
-
- $conclsobj = new $url[0]();
- // $conclsobj->$url[1]($url[2]);
- // $conclsobj->testmethod();'
- echo $method = $url[1]();
+$obj = new $dynamic_class();
+ // var_export($obj);
+ $obj->$dynamic_method($dynamic_param);
+ // $obj->testmethod();
+ // echo $method->$url[1]();
 
 
 
