@@ -2,11 +2,14 @@
 /**
  * 
  */
-class firstclass{
+class firstclass extends mainctrltwo{
 	
 	function __construct(){
-		echo "ami jani eta controller";
-		// code...
+     parent::__construct();
+	}
+
+	public function testmethod($param){
+		echo "it is method $param";
 	}
 }
 ?>
